@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      let num = [1, 2, 3, 4, 8, 3, 2];
+      console.log(num);
+      console.log(num[0]);
+      console.log(num[1]);
+      console.log(num[2]);
+
+      let dusra = [1, "tybans", true, null, [1, 2]];
+      console.log(dusra[4]);
+      console.log(num.length);
+
+      console.log(typeof dusra); //
+
+      console.log(Array.isArray(dusra));
+
+      let obj = { name: "tybans" };
+      console.log(Array.isArray(obj));
+
+      let arr = [1, 2, 3];
+      console.log(arr);
+      arr.push(6);
+      console.log(arr);
+      // arr.pop()
+      console.log("popped " + arr.pop());
+      console.log(arr);
+      console.log("popped " + arr.pop());
+      console.log(arr);
+
+      let arr2 = [3, 5, 8, 2];
+      console.log(arr2);
+
+      arr2.splice(1, 3);
+      console.log(arr2);
+
+      let arr3 = [8, 3, 1, 5, 9, 7]
+      console.log(arr3);
+      arr3.sort()
+      // console.log(arr3);
+      
+      console.log(arr3.valueOf())
+
+      let arr4 = arr3
+      arr4[0] = 98
+      console.log(arr3);
+      console.log(arr4);
+      
+      // De-Structuring
+      let [a, b, c, d] = arr3
+      console.log(a + ' ' + b + ' ' + c + ' ' + d);
+      
+      
+
+
+    </script>
+  </body>
+</html>

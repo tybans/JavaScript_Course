@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro Ticket</title>
+  </head>
+  <body>
+    <h1>Metro ticket System</h1>
+    <script>
+      let age = 9;
+      let gender = "female";
+      let finalDiscount;
+
+      if (age <= 5) {
+        finalDiscount = 100;
+      } else if (age <= 8 || gender === "female") {
+        finalDiscount = 50;
+      } else if (age >= 65) {
+        finalDiscount = 30;
+      } else {
+        finalDiscount = 0;
+      }
+    </script>
+  </body>
+</html>

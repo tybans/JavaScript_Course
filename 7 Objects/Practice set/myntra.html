@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra</title>
+  </head>
+  <body>
+    <script>
+      let product = {
+        company : 'Myntra',
+        itemName : 'T-shirt',
+        price: 861,
+        'delivery-time' : 'Same day delivery',
+      }
+      console.log(product);
+
+
+      // let copyProduct = product
+      // console.log(product);
+      // copyProduct.price = 1002
+      // console.log(product);
+      // copyProduct.itemName = 'Jeans'
+      // console.log(product);
+
+      console.log(product['delivery-time']);
+
+      let msg = {
+        message: 'Good Job',
+        status: 'Complete',
+      }
+
+      console.log(msg);
+      let {message, status} = msg
+      console.log(message);
+      console.log(status);
+
+
+      function isIdenticalProduct(product1, product2) {
+        if (typeof product1 !== 'object' || typeof product2 !== 'object') {
+          console.warn('Parameter passed was not an object!');
+          return false
+
+        }
+
+        if (product1 == product2){
+          return true
+        }
+
+        if (product1.company === product2.company &&
+        product1.itemName === product2.itemName &&
+        product1.price === product2.price) {
+          return true
+        }
+        else {
+          return false
+        }
+      }
+
+      let product2 = {
+        company : 'Myntra',
+        itemName : 'T-shirt',
+        price: 1002,
+        'delivery-time' : 'Same day delivery',
+      }
+      let product3 = {
+        company : 'Myntra',
+        itemName : 'T-shirt',
+        price: 1002,
+        'delivery-time' : 'Same day delivery',
+      }
+
+
+      console.log(isIdenticalProduct(product, ''));
+      console.log(isIdenticalProduct(product, product));
+      console.log(isIdenticalProduct(product3, product2));
+      console.log(isIdenticalProduct(product2, product3));
+      
+
+
+
+    </script>
+  </body>
+</html>

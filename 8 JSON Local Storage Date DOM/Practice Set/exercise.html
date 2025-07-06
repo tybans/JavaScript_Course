@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+    <style>
+      #my-button {
+        height: 50px;
+        width: 50px;
+        font-size: 24px;
+        border: none;
+        border-radius: 5rem;
+      }
+
+      .js-odd {
+        background-color: coral;
+      }
+
+      .js-even {
+        background-color: chartreuse;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="greeting"></h3>
+
+    <button id="my-button" onclick="buttonPressed()"></button>
+
+    <script>
+      let noOfTimeButtonPressed = localStorage.getItem('noOfTimeButtonPressed') || 0
+    
+      function buttonPressed() {
+        // console.log('pressed');
+        noOfTimeButtonPressed++;
+        localStorage.setItem('noOfTimeButtonPressed', noOfTimeButtonPressed)
+        updateButton();
+      }
+
+      function updateButton() {
+        let button = document.querySelector("#my-button");
+
+        // if (button.innerText % 2 === 0) {
+        if (noOfTimeButtonPressed % 2 === 0) {
+          button.classList.remove("js-odd");
+          button.classList.add("js-even");
+        } else {
+          button.classList.remove("js-even");
+          button.classList.add("js-odd");
+        }
+        button.innerText = noOfTimeButtonPressed;
+      }
+      updateButton();
+
+      function greetings(name = "Dear") {
+        let date = new Date();
+        let hours = date.getHours();
+        let heading = document.querySelector("#greeting");
+        if (hours < 12) {
+          // console.log('Good morning.');
+          heading.innerText = `Good Morning ${name}`;
+        } else if (hours >= 12 && hours < 17) {
+          // console.log('Good Afternoon');
+          heading.innerText = `Good Afternoon ${name}`;
+        } else {
+          // console.log('Good night');
+          heading.innerText = `Good night ${name}`;
+        }
+      }
+      greetings("tybans");
+    </script>
+  </body>
+</html>
