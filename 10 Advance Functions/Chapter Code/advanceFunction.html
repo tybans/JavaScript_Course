@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Function</title>
+  </head>
+  <body>
+    <script>
+      let sum = function (num1, num2) {
+        return num1 + num2;
+      };
+
+      let newSum = sum;
+      // console.log(sum(4, 5));
+      // console.log(newSum(4, 11));
+
+      // Function as arguments
+      // ((4 + 5) + 7)
+
+      let sumThreeNos = function (num1, num2, num3, sumTwoNos) {
+        let sum1 = sumTwoNos(num1, num2);
+        return sumTwoNos(sum1, num3);
+      };
+      // console.log(sumThreeNos(8, 5, 6, sum));
+
+      // console.log(sumThreeNos);
+      // console.log(typeof sumThreeNos);
+
+      // Arrow Function
+      let sum1 = (num4, num5) => {
+        return num4 + num5;
+      };
+
+      // console.log(sum1(8, 6));
+
+      let square = (sqr) => sqr * sqr;
+      // console.log(square(5));
+
+      // ================================================================
+      // setTimeout()
+
+      // setTimeout(function() {
+      //   console.log("subah ho gayi mamu");
+      // },5000)
+
+      // let alarm = function() {
+      //   console.log("subah ho gayi mamu");
+
+      // }
+
+      // let alarm = () => console.log("subah ho gayi mamu");
+
+      console.log("Alarm set");
+
+      // setTimeout(alarm, 2000); // yaha par function ko call nhi karna hai, alarm() nhi use karna hai, kyuki setTimeout usko khud call karega diye gaye time ke baad
+      
+      setTimeout(() => console.log("subah ho gayi mamu"), 2000);
+
+      console.log("alarm khatam");
+    </script>
+  </body>
+</html>
