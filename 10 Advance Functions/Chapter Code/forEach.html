@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Each Loop</title>
+  </head>
+  <body>
+    <script>
+      let arr = [3, 5, 7, 8, 9, 6];
+      for (let i = 0; i < arr.length; i++) {
+        // console.log(arr[i]);
+      }
+
+      // forEach
+      // arr.forEach(function (num) {
+      //   console.log(num);
+      // });
+      // arr.forEach((num) => {
+      //   console.log(num);
+      // });
+
+      // arr.forEach((num) => console.log(num));
+
+      arr.forEach((num) => {
+        if(num === 5){
+          console.log(`Element found ${num}`);
+          return
+        }
+        console.log(`Element visited: ${num}`);
+        
+      })
+
+      function searchArr(arr, num) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === num) {
+            // console.log(`Element found at: ${i}`);
+            return
+          }
+        }
+        // console.log("Element not found");
+      }
+
+      searchArr(arr, 3)
+
+
+    </script>
+  </body>
+</html>

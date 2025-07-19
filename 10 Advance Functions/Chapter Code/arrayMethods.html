@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <script>
+
+      let arr = [1, 2, 3, 4, 5, 6, 8, 9];
+
+      let filteredArr = arr.filter((value, index) => {
+        if (value % 2 === 1) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      // console.log(filteredArr);
+
+      // let newFilteredArr = arr.filter((value, index) => {return value % 2 === 1});
+
+      let newFilteredArr = arr.filter((value, index) => value % 2 === 1);
+
+      console.log(newFilteredArr);
+      
+
+      // ===============================================================
+      // Map
+      // let squares = arr.map((num) => {
+      //   return num*num
+      // })
+
+      // let squares = arr.map((num) => { return num*num})
+
+      let squares = arr.map((num) => num*num)
+      console.log(squares);
+      
+
+
+    </script>
+  </body>
+</html>

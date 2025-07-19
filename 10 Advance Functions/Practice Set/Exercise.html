@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise</title>
+    <style>
+      .btn {
+        height: 30px;
+        width: 80px;
+        font-size: 13px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .size-double {
+        height: 60px;
+        width: 160px;
+        font-size: 26px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" onclick="timesUp">Subscribe</button>
+
+    <script>
+      // Q1- Create a variable multiply and assign a function to this variable that multiplies two numbers. Call this method from the variable.
+
+      // let multiply = function (num1, num2) {
+      //   console.log(num1 * num2);
+      // };
+
+      // let multiply = (num1, num2) => num1 * num2
+
+      // console.log(multiply(4, 5));
+
+      let multiply = (num1, num2) => console.log(num1 * num2);
+
+      multiply(4, 5);
+
+      // ===============================================
+      // Q2- Create a function runTwice that takes a function as a parameter and then runs that method twice.
+
+      let greetings = () => {
+        console.log("Namastey ji...");
+      };
+      let runTwice = function (inputMethod) {
+        inputMethod();
+        inputMethod();
+      };
+      runTwice(greetings);
+
+      // ============================================
+      // Q3- Create a button which should grow double in size on clicking after 2 seconds
+
+      function doubleTheSize() {
+        const button = document.querySelector(".btn");
+        button.classList.add("size-double");
+      }
+
+      const button = document.querySelector(".btn");
+      let timesUp = button.addEventListener("click", () => {
+        setTimeout(doubleTheSize, 2000);
+      });
+
+      // ==========================================================
+      // Q4- In the above exercise add the behaviour using an event listener instead of onclick
+      // Done it already in 3
+
+      // ===========================================================
+      // Q5- Create a function that sums an array of numbers. Do this using a for-each loop
+
+      let arr = [2, 4, 6, 8];
+
+      let sum = 0;
+
+      arr.forEach((num) => {
+        sum = sum + num;
+      });
+      console.log(sum);
+
+      // ============================================
+      // Q6- Create a function that takes an array of numbers and return their squares using map function
+
+      let numArr = [2, 4, 6, 8];
+
+      // function arrFun(num) {
+      //   arr.map(() =>  {return num*num})
+      // }
+      // console.log(arrFun([]));
+      
+      let squares = numArr.map((num) => {
+        return num * num;
+      });
+      console.log(squares);
+    </script>
+  </body>
+</html>
